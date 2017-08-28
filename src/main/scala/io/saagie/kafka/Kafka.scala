@@ -42,7 +42,6 @@ object Kafka extends App {
   def startStreaming(params: Params): Unit = {
     val sparkConf = new SparkConf()
       .setAppName("kafka example")
-      .setMaster("local[*]")
     val streamingContext = new StreamingContext(sparkConf, Seconds(10))
 
     val kafkaParams = Map[String, Object](
